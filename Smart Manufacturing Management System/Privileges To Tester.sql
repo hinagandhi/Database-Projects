@@ -1,0 +1,24 @@
+use SmartManufacturing
+go
+CREATE LOGIN tester WITH PASSWORD = 'tester';
+GO
+CREATE USER tester FOR LOGIN tester
+GO
+GRANT SELECT, INSERT, UPDATE,DELETE ON DataFromSensor TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON Department TO tester
+
+GRANT SELECT, INSERT, UPDATE,DELETE ON DepartmentAcquiresDataFromSensor TO tester
+REVOKE INSERT, UPDATE,DELETE ON DepartmentAcquiresDataFromSensor FROM tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON Drug TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON Factory TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON machineProducesDrugs TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON machinery TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON sensor TO tester
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON warehouse TO tester
